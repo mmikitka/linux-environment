@@ -1,0 +1,99 @@
+" GUI Settings {
+    " Use the default font in the GUI
+    set guifont=""  " Use the default font
+" }
+
+" Key (re)Mappings {
+    "Set the local leader to the same as the global leader
+    let maplocalleader = ','
+
+    set pastetoggle=<F2>    " pastetoggle (sane indentation on pastes)
+
+    " ,f: display all lines with keyword under cursor and ask which one to jump to
+    nmap ,f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+" }
+
+" Vim UI {
+    set novisualbell " No blinking
+    set noerrorbells " No noise.
+    set vb t_vb= " disable any beeps or flashes on error
+
+    set clipboard+=unnamed  "Share windows clipboard
+" }
+
+" Formatting {
+    set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+    set fo-=r " Do not automatically insert a comment leader after an enter
+    set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
+
+    set wrap                      " wrap long lines
+" }
+
+" Syntastic {
+    let g:syntastic_enable_balloons = 0
+    
+    " The HTM, CSS and Javascript syntax checkers are really slow, so put them in passive
+    let g:syntastic_mode_map = { 'mode': 'active',
+                               \ 'active_filetypes': [],
+                               \ 'passive_filetypes': ['html', 'css', 'javascript', 'php'] }
+    map <F3> :SyntasticCheck<cr>
+" }
+
+" Ctrl-P {
+    let g:ctrlp_switch_buffer = 'Et'
+    let g:ctrlp_open_new_file = 'h'
+
+" }
+
+" PHP {
+    let php_folding = 1
+    let g:syntastic_phpcs_conf = '--standard=PEAR'
+    
+    " NOTE: I downgraded the doc.vim file in PIV to the latest php-doc.vim
+    " since I do not like the Vim folding tag inserts
+    let g:pdv_cfg_Category = "Category"
+    let g:pdv_cfg_Package = "Package"
+    let g:pdv_cfg_Version = "Release: 1.0"
+    let g:pdv_cfg_Author = "Matt Mikitka <mmikitka@wlu.ca>"
+    let g:pdv_cfg_Copyright = "1911-2012 Wilfrid Laurier University"
+    let g:pdv_cfg_License = "None""
+" }
+
+" Debian configuration
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+" Filetype Detection {
+    augroup filetypedetect
+        " Detect .txt as 'text'
+        autocmd! BufNewFile,BufRead *.txt setfiletype text
+    augroup END
+" }
+
+" File-specific settings {
+    autocmd FileType javascript setlocal textwidth=79 shiftwidth=4 tabstop=4 softtabstop=4
+    autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType python setlocal textwidth=79 shiftwidth=4 tabstop=4 softtabstop=4
+    autocmd FileType text setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType xhtml,html,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" }
+
+" project {
+    nmap <silent> <Leader>p :Project<CR>
+" }
+
+" vim-gitgutter {
+    nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
+    nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
+
+    " Reduce delays on generating Git gutter signs
+    let g:gitgutter_on_bufenter = 0
+    let g:gitgutter_all_on_focusgained = 0
+" }
+
+" neosnippet {
+    " Disable the neosnippet preview candidate window
+    " When enabled, there can be too much visual noise
+    " especially when splits are used.
+    set completeopt-=preview
+" }

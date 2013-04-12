@@ -1,0 +1,47 @@
+" Specify the desired bundles
+let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'debugger']
+
+" Key Re-mappings {
+    " Disable fast tabs
+    let g:spf13_no_fastTabs = 1
+
+    " Do not remove trailing white space
+    let g:spf13_keep_trailing_whitespace = 1
+
+    " Disable easy window navigation
+    let g:spf13_no_easyWindows = 1
+" }
+
+" Vdebug {
+    let g:vdebug_options= {
+    \    "port" : 9000,
+    \    "server" : 'localhost',
+    \    "timeout" : 20,
+    \    "on_close" : 'detach',
+    \    "ide_key" : '1',
+    \}
+
+    " Map the key bindings to Firebug
+    let g:vdebug_keymap = {
+    \    "run_to_cursor" : "<F1>",
+    \    "set_breakpoint" : "<F4>",
+    \    "run" : "<F5>",
+    \    "close" : "<F6>",
+    \    "detach" : "<F7>",
+    \    "get_context" : "<F8>",
+    \    "eval_under_cursor" : "<F9>",
+    \    "step_over" : "<F10>",
+    \    "step_into" : "<F11>",
+    \    "step_out" : "<S-F11>",
+    \}
+" }
+Bundle 'joonty/vdebug'
+
+Bundle 'mattn/zencoding-vim'
+Bundle 'thinca/vim-quickrun'
+Bundle 'jQuery'
+Bundle 'project.tar.gz'
+Bundle 'netrw.vim'
+Bundle 'wannesm/wmgraphviz.vim'
+Bundle 'mmikitka/vim-drupal'
+Bundle 'skammer/vim-css-color'
