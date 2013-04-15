@@ -1,6 +1,9 @@
 " Specify the desired bundles
 let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'debugger']
 
+" Use previous version of powerline
+let g:spf13_use_old_powerline = 1
+
 " Key Re-mappings {
     " Disable fast tabs
     let g:spf13_no_fastTabs = 1
