@@ -46,9 +46,14 @@
 " }
 
 " PHP {
-    let php_folding = 1
+    let php_folding = 0
+
+    " Folding incurs a significant performance hit
+    " See https://github.com/spf13/PIV/issues/24
+    let g:DisableAutoPHPFolding = 1
+
     let g:syntastic_phpcs_conf = '--standard=PEAR'
-    
+
     " NOTE: I downgraded the doc.vim file in PIV to the latest php-doc.vim
     " since I do not like the Vim folding tag inserts
     let g:pdv_cfg_Category = "Category"
