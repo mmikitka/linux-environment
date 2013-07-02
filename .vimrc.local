@@ -102,3 +102,29 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
     " especially when splits are used.
     set completeopt-=preview
 " }
+
+" neocomplcache {
+    " Performance tuning tips from https://github.com/Shougo/neocomplcache.vim/wiki/neocomplcache-tips
+
+    " Disable auto-popup
+    let g:neocomplcache_disable_auto_complete = 1
+
+    " Popup on Tab
+    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+    function! s:check_back_space()"{{{
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1] =~ '\s'
+        endfunction"}}
+
+    " Auto-complete to common string and show available variants (if any)
+    inoremap <expr><C-l> neocomplcache#complete_common_string()
+
+    " Highlight first candidate
+    let g:neocomplcache_enable_auto_select = 1
+
+    " Key bindings for mangaging the pop-up
+    " "Disabled -- causing issues
+    " inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
+    " inoremap <expr><BS> neocomplcache#smart_close_popup().“\<C-h>”
+    " inoremap <expr><CR> neocomplcache#smart_close_popup() . “\<CR>”
+" }
