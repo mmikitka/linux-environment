@@ -1,0 +1,5 @@
+" spf13 options {
+
+    " Leader key
+    let g:spf13_leader=','
+" }
