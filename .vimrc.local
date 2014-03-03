@@ -5,7 +5,7 @@
 
 " Key (re)Mappings {
     "Set the local leader to the same as the global leader
-    let maplocalleader = ','
+    "let maplocalleader = ','
 
     set pastetoggle=<F2>    " pastetoggle (sane indentation on pastes)
 
@@ -17,8 +17,6 @@
     set novisualbell " No blinking
     set noerrorbells " No noise.
     set vb t_vb= " disable any beeps or flashes on error
-
-    set clipboard+=unnamed  "Share windows clipboard
 " }
 
 " Formatting {

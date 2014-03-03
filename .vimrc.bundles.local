@@ -1,5 +1,5 @@
 " Specify the desired bundles
-let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'debugger']
+let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc', 'debugger']
 
 " Use previous version of powerline
 let g:spf13_use_powerline = 1

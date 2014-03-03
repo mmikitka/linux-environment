@@ -2,4 +2,7 @@
 
     " Leader key
     let g:spf13_leader=','
+
+    " Disable wrap relative motion for start/end line motions
+    let g:spf13_no_wrapRelMotion = 1
 " }
