@@ -6,3 +6,6 @@
     " Disable wrap relative motion for start/end line motions
     let g:spf13_no_wrapRelMotion = 1
 " }
+
+" Disable Go auto-install
+let g:go_disable_autoinstall = 1
