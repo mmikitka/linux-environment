@@ -58,7 +58,7 @@
     let g:pdv_cfg_Package = "Package"
     let g:pdv_cfg_Version = "Release: 1.0"
     let g:pdv_cfg_Author = "Matt Mikitka <mmikitka@wlu.ca>"
-    let g:pdv_cfg_Copyright = "1911-2012 Wilfrid Laurier University"
+    let g:pdv_cfg_Copyright = "1911-2014 Wilfrid Laurier University"
     let g:pdv_cfg_License = "None""
 " }
 
@@ -81,24 +81,11 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
     autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " }
 
-" project {
-    nmap <silent> <Leader>p :Project<CR>
-" }
-
-" vim-gitgutter {
-    nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
-    nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
-
-    " Reduce delays on generating Git gutter signs
-    let g:gitgutter_on_bufenter = 0
-    let g:gitgutter_all_on_focusgained = 0
-" }
-
 " neosnippet {
     " Disable the neosnippet preview candidate window
     " When enabled, there can be too much visual noise
     " especially when splits are used.
-    set completeopt-=preview
+    " set completeopt-=preview
 " }
 
 " neocomplcache {
@@ -119,10 +106,4 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
     " Highlight first candidate
     let g:neocomplcache_enable_auto_select = 1
-
-    " Key bindings for mangaging the pop-up
-    " "Disabled -- causing issues
-    " inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
-    " inoremap <expr><BS> neocomplcache#smart_close_popup().“\<C-h>”
-    " inoremap <expr><CR> neocomplcache#smart_close_popup() . “\<CR>”
 " }
